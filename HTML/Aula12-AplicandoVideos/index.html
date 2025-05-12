@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com Videos</title>
+</head>
+<body>
+
+    <h1>Trabalhando com vídeos</h1>
+
+    <!-- 
+        * controls => habilita os controles do video (play, volume, fullscreen, etc..)
+        * loop => reinicia o video automaticamente quando chega no final
+        * muted => inicia o video sempre mutado.
+        * autoplay => quando o site é aberto, o video inicia automaticamente (alguns navegadores estão desativando essa opção)
+        * poster => adiciona um thumbnail no video enquanto o video não estiver em execução. Pode ser adicionado uma imagem por url ou uma imagem que esteja loca, o AUTOPLAY precisa estar desativado.
+    -->
+
+    <video poster="./assets/thumb.png" width="420" height="340" controls loop muted autoplay>
+        <source src="./assets/natureza.mp4" type="video/mp4">
+    </video>
+
+    
+</body>
+</html>

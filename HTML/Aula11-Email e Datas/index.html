@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+
+<body>
+
+    <h1>Formulários</h1>
+
+    <!-- 
+        <form> </form> => inicializa um formulario
+        <input> => é o campo onde será digitado
+        <label> => o que é o campo? do que se trata...
+
+        
+    -->
+
+    <form action="">
+
+        <label for="">Seu email</label>
+        <input type="email" name="email"> <br><br>
+
+        <label for="pnome">Primeiro nome: </label>
+        <!-- a propriedade for="" faz uma referencia ao  id e name da tag input -->
+        <input type="text" id="pnome" name="pnome" placeholder="Seu primeiro nome" required>
+        <!-- a propriedade required torna o campo o preenchimento ou seleção OBRIGATORIO-->
+        <br><br>
+
+        <label for="unome">Ultimo nome: </label>
+        <input type="text" name="unome" id="unome" placeholder="Seu ultimo nome" required>
+        <br><br>
+
+        <!--Tipo RADIO-->
+        <label for="">
+            <strong> Qual seu nível como programador atualmente? </strong>
+        </label><br>
+
+        <label for="">
+            <!-- o atributo checked deixa a opcao selecionada por padrão -->
+            <input type="radio" name="nivel" value="iniciante" id="" checked>Sou iniciante
+        </label>
+
+        <label for="">
+            <input type="radio" name="nivel" value="medio">Comecei a pouco tempo
+        </label>
+
+        <label for="">
+            <input type="radio" name="nivel" value="avançado">Sou Avançado
+        </label> <br><br>
+
+        <!-- Tipo Select para selecionar itens -->
+        <label for="escolaridade">
+            <strong>Sua Escolaridade</strong>
+        </label>
+
+        <select name="" id="escolaridade" required>
+            <option selected disabled value="">Selecione</option>
+            <!-- Inicia Selecionado, porem desativado e sem valor -->
+            <option value="">Educação Basica</option>
+            <option value="">Ensino Medio</option>
+            <option value="">Ensino Superior</option>
+            <option value="">Pós Graduação</option>
+        </select><br><br>
+
+        <!-- Checkbox -->
+
+        <label for="">
+            <strong>Selecione as tecnologias que voce conhece</strong>
+        </label><br><br>
+
+        <input type="checkbox" id="tecnologia1" name="tecnologia1" value="HTML">
+        <label for="tecnologia1">HTML</label>
+
+        <input type="checkbox" id="tecnologia2" name="tecnologia2" value="CSS">
+        <label for="tecnologia2">CSS</label>
+
+        <input type="checkbox" id="tecnologia3" name="tecnologia3" value="Javascript">
+        <label for="tecnologia3">Javascript</label>
+
+        <input type="checkbox" id="tecnologia4" name="tecnologia4" value="PHP">
+        <label for="tecnologia4">PHP</label>
+
+        <br><br>
+        <!-- Tipo Date -->
+
+        <!-- Data completa com Hora -->
+        <label for="nascimento">Data Nascimento com Hora</label>
+        <input type="datetime-local" name="nascimento" id="nascimento">
+
+        <br><br>
+        <!-- Data Completa sem Hora -->
+        <label for="data-nascimento">Data de nascimento sem hora</label>
+        <input type="date" name="data-nascimento" id="data-nascimento">
+        
+        <br><br>
+        <input type="submit" value="Cadastrar"> <!-- Cria um botão com a propriedade Submit e o nome Cadastrar-->
+
+    </form>
+
+
+</body>
+
+</html>

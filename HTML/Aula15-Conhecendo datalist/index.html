@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag Detail e Summary</title>
+</head>
+
+<body>
+
+    <h1>Datail e Summary</h1>
+
+    <!-- 
+        open => inicia o acordeon aberto.
+    -->
+
+    <details open>
+        <summary>Motor 1.6</summary>
+        <p>O carro possui um motor super forte e rapido...</p>
+    </details>
+
+    <details>
+        <summary>Conforto</summary>
+        <p>Carro de Luxo com sensor de ré, cameras e som de qualidade...</p>
+    </details>
+
+    <details>
+        <summary>Preço</summary>
+        <p>12x R$1000.00</p>
+    </details>
+
+    <h2>Aplicando DataList</h2>
+
+    <form action="">
+        <input list="carros" name="carro" placeholder="Procurando algum carro?">
+        <datalist id="carros">
+            <option value="Gol 1.6"></option>
+            <option value="Golf 1.4"></option>
+            <option value="BMW 1.0"></option>
+            <option value="Onix 1.0"></option>
+        </datalist>
+    </form>
+
+</body>
+
+</html>
