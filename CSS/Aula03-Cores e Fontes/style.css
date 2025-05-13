@@ -1,0 +1,7 @@
+.primeiro-h1 {
+  /* color:grey; Selecionando cores nativas */
+  /* color: #554455; Selecionando cores hexadecimais*/
+  /* color: rgb(0, 0, 255); Selecionando cores rgb */
+   color: rgba(0,0 ,255, 0.5 ); /*Selecionado com rgba, a letra "a" é de opacidade */
+   font-family: 'Roboto', sans-serif;
+}

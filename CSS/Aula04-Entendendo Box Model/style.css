@@ -1,0 +1,27 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+    background-color: #121212;
+    width: 700px;
+    color: #fff;
+    
+    
+    /* Margin: Margem do container  */
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    /* margin: 50px; */
+
+    /* Padding: espaçamento interno */
+    /* padding: 30px; */
+    padding-top: 30px;
+    padding-left: 30px;
+
+    /* Border: aplica uma borda */
+    border: 5px solid red;
+    border-radius: 10px;
+
+}
