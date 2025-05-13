@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  height: 180vh;
+}
+
+.container {
+  background-color: #121212;
+  width: 700px;
+  color: #fff;
+  margin: auto;
+  padding: 50px;
+  border: 5px solid red;
+  border-radius: 10px;
+}
+
+/* 
+
+    > 1. Static => Por padrão temos o Static ou seja Estatico
+
+    > 2. Relative => elemento é posicionado em relação a sua posição normal.
+        2.1 Propriedades do Relative (top, bottom, left, right)
+    
+    > 3. Absolute => É posicionado em relação ao seu elemento pai mais próximo que possui relative. Se não tiver relative é posicionado em relação ao body 
+    
+    > 4. Fixed => É posicionado em relação ao viewport (é a area no browser onde aparece seu site) sempre fica na mesma posição mesmo se a página tem scroll
+    
+    > 5. Stick => É posicionado em relação a posição do scroll
+*/
+
+/* .area{
+    position: relative;
+     top: 150px;
+    left: 90px; 
+
+    width: 650px;
+    height: 500px;
+
+    border: 5px solid green;
+} 
+*/
+
+/* .area-absolute{
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 5px solid blue;
+} */
+
+
+header{
+  background-color: cyan;
+  width: 100%;  
+
+  position: sticky;
+  top: 0;
+}
+
+
+.area{
+  width: 200px;
+  height: 80px;
+
+  background-color: green;
+
+  position: fixed;
+  bottom: 50px;
+  right: 80px;
+}
+
