@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Login</title>
+    <title>Nova Conta</title>
 </head>
 
 <body>
@@ -14,18 +14,25 @@
 
         <!-- LADO ESQUERDO -->
         <section class="left">
-            <h1>Minha Conta</h1>
+            <h1>Nova Conta</h1>
 
             <form class="form">
+                <input class="input" placeholder="Digite seu nome" type="text">
                 <input class="input" placeholder="Digite seu email" type="email">
 
                 <input class="input" placeholder="Digite sua senha" type="password">
 
-                <button class="button" type="submit"> Acessar Conta</button>
+                <div class="area">
+                    <input type="radio" name="termos" id="termos" class="termos">
+                    <span>Concordo com os termos.</span>
+                </div>
+
+
+                <button class="button" type="submit"> Nova Conta</button>
             </form>
 
             <div class="area">
-                <span class="link">Novo por aqui? <a href="./signup.html">Cadastre-se</a></span>
+                <span class="link">Já possui uma conta? <a href="./index.html">Faça login</a></span>
             </div>
             <!-- FIM LADO ESQUERDO -->
 

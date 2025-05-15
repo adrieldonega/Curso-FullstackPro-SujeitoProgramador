@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  border: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -9,205 +10,235 @@ body {
   --bg-right-side: #0056fb;
   --bg-left-side: #fff;
   --text-color: #000;
+
+  width: 100%; /*  vai pegar 100% da largura que ele conseguir */
 }
 
+/* O .container é o main que está em volta de todo mundo. */
 .container {
-  display: flex;
-  height: 100vh;
+  display: flex; /* Ele vai orientar um ao lado do outro */
+  flex-direction: row; /* Para falar que estamos em linha mesmo */
+  align-items: center; /* Orienta os itens na vertical e horizontal */
+  justify-content: center; /* Orienta os itens na vertical e horizontal */
+  margin: 0 auto; /* centraliza os itens no centro */
 }
 
-.column {
+/*Os dois flex:1 vão disputar todo o espaço da tela.*/
+.left {
+  flex: 1; /* ou seja, ele tentar pegar todo o tamanho que conseguir */
+  background-color: var(--bg-left-side);
+  display: flex;
+  flex-direction: column; /*Para deixar os dois itens um abaixo do outro*/
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px; /*Espaçamento interno 0px em cima e em baixo e 24px na esquerda e na direita */
+}
+
+.left h1 {
+  width: 100%; /*Vai pegar 100% da largura que ele conseguir*/
+  max-width: 560px; /*Sendo a maxima largura permitida é 560px*/
+  margin-bottom: 18px;
+  font-size: 32px;
+}
+
+.form {
+  position: relative;
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 100%;
+  width: 100%; /*Vai pegar 100% da largura da tela, só que vamos limitar tambem a 560px para nao colar nas bordas da tela */
+  max-width: 560px;
+  z-index: 9; /*Deixa o formulario sobre todos os itens.*/
 }
 
-.left-side {
-  align-items: center;
-  justify-content: center;
-  background-color: var(--bg-left-side);
+.input {
+  border: 1px solid var(--text-color);
+  border-radius: 4px;
+  margin-bottom: 18px;
+  min-width: 100%; /* vai pegar 100% do pai dele, e o pai dele é o formulario  */
+  padding: 0 14px;
 }
 
-.left-side h1 {
-  text-align: start;
-  margin-bottom: 20px;
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"] {
+  height: 42px; /* todos os inputs que tiverem esses tipos, será aplicada essa altura.  */
 }
 
-.emvolta{
-    
-    width: 430px;
+.form::before {
+  content: ""; /*Escreve algo antes do form, mas vamos deixar vazio, pra conseguir colocar a imagem*/
+  position: absolute; /* Para a imagem obedecer onde eu quero que ela fique na tela.  */
+  background-image: url("/Projetos/03-Formulario-de-Cadastro/assets/code.svg");
+  background-size: 90px;
+  background-repeat: no-repeat;
+  z-index: 1;
+  width: 90px;
+  height: 90px;
+  opacity: 0.3;
+  bottom: -50px;
+  right: -30px;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.button {
+  background-color: var(--bg-right-side);
+  height: 42px;
+  border-radius: 4px;
+  color: var(--bg-left-side);
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%; /*Vai pegar 100% da largura da tela*/
+  max-width: 560px; /*Vai obedecer os 100% da largura da tela e ficar limitado a 560px*/
+  cursor: pointer;
+  margin-bottom: 18px;
+  transition: background-color 0.5s linear;
+  z-index: 2;
 }
 
-.links{
-    display: flex;
-    justify-content: start;
-    margin-top: 10px;
+.button:hover {
+  background-color: #008afb;
 }
 
-.links p{
-    font-weight: bold;
+.area {
+  width: 100%;
+  max-width: 560px;
+  margin-bottom: 18px;
 }
 
-.links a{
-    text-decoration: none;
-    color: var(--text-color);
-    margin-left: 5px;
+.link {
+  align-self: flex-start;
+  font-weight: bold;
 }
 
-input[type="email"],
-input[type="password"],
-input[type="text"]{
-    padding: 10px 15px;
-    border: 1px solid var(--text-color);
-    border-radius: 5px;
-}
-
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="text"]:focus{ 
-    border: 2px solid var(--text-color);
-}
-
-
-
-
-input[type="submit"]{
-    padding: 10px 0;
-    background-color: var(--bg-right-side);
-    border: none;
-    color: var(--bg-left-side);
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 2;
+.link a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: normal;
+  margin-left: 6px;
 }
 
 /* FIM LADO ESQUERDO */
 
-
 /* LADO DIREITO */
-
-.right-side{
-    background-color: var(--bg-right-side);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.right {
+  flex: 1; /*Os dois flex:1 vão disputar todo o espaço da tela.*/
+  background-color: var(--bg-right-side);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px; /*Não deixa a imagem ficar colada na borda esquerda.*/
 }
 
-.emvolta2{
-    
-    width: 520px;
+.info-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 18px;
 }
 
-.emvolta2 img{
-    width: 100%;
-    margin-bottom: 30px;
+.subtitle {
+  max-width: 400px;
+  font-size: 38px;
+  color: var(--bg-left-side);
+  margin-bottom: 18px;
 }
 
-.emvolta2 h1{
-    color: var(--bg-left-side);
-    text-align: start;
-    margin-bottom: 20px;
-    font-size: 35px;
+.description {
+  max-width: 400px;
+  line-height: 150%;
+  color: var(--bg-left-side);
 }
 
-.emvolta2 p{
-    color: var(--bg-left-side);
-    line-height: 20px;
+.emvolta2 {
+  width: 520px;
 }
 
+.emvolta2 img {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.emvolta2 h1 {
+  color: var(--bg-left-side);
+  text-align: start;
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+
+.emvolta2 p {
+  color: var(--bg-left-side);
+  line-height: 20px;
+}
 
 /* NOVA CONTA */
 
-form{
-    position: relative;
+form {
+  position: relative;
 }
 
-form .checkbox{
-    display: flex;
-    align-items: center;
+form .checkbox {
+  display: flex;
+  align-items: center;
 }
 
-form .checkbox label{
-    font-size: 14px;
+form .checkbox label {
+  font-size: 14px;
 }
 
-input[type="checkbox"]{
-    margin-right: 12px;
-    width: 17px;
-    height: 17px;
+input[type="checkbox"] {
+  margin-right: 12px;
+  width: 17px;
+  height: 17px;
 }
 
 /* FIM NOVA CONTA */
 
 /* RESPONSIVIDADE */
 
-@media (max-width: 1059px){
-    .emvolta{
-        width: 70%;
-    }
+@media (max-width: 700px) {
+  
+  .container{
+    flex-direction: column; /* Quando chegar em 700px, deixa a disposiçao da tela em coluna. */
+    min-height: 100vh;
+ }
+ .left{
+  width: 85%;
+  padding: 24px 0;
+ }
 
-    .emvolta2{
-        width: 80px;
-    }
+ .left h1{
+  margin-bottom: 18px;
+ }
 
-    .emvolta2 h1{
-        font-size: 27px;
-    }
-
-    .emvolta2 p{
-        font-size: 15px;
-    }
+ .right{
+  padding: 32px 0;
+  width: 100%;
+  height: 100%;
+ }
+ .form::before{
+  background-size: 80px;
+  width: 84px;
+  height: 84px;
+  bottom: -46px;
+  right: -30px;
+ }
 }
 
-@media (max-width: 775px){
-    .container{
-        flex-direction: column;
-    }
+@media (max-width: 500px){
+  .info-img{
+    width: 85%;
+  }
 
-    .column{
-        width: 100%;
-    }
-
-    .left-side{
-        height: 100%;
-    }
-
-    .emvolta{
-        width: 70%;
-    }
-
-    .emvolta h1{
-        margin-top: 10px;
-    }
-
-    .emvolta2{
-        width: 65%;
-    }
-
-    .emvolta2 img{
-        margin-top: 25px;
-        width: 100%;
-    }
-
-    .emvolta2 h1{
-        text-align: start;
-    }
-
-    .emvolta2 p{
-        margin-bottom: 10px;
-    }
-
-    .links{
-        margin-bottom: 20px;
-    }
+  .subtitle{
+    margin-bottom: 18px;
+    font-size: 32px;
+    max-width: 400px;
+    padding: 0 14px;
+    text-align: center;
+  }
+  
+  .description{
+    max-width: 400px;
+    padding: 0 14px;
+  }
 }
