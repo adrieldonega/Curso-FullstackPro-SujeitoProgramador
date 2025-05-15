@@ -1,0 +1,213 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  --bg-right-side: #0056fb;
+  --bg-left-side: #fff;
+  --text-color: #000;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+
+.left-side {
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-left-side);
+}
+
+.left-side h1 {
+  text-align: start;
+  margin-bottom: 20px;
+}
+
+.emvolta{
+    
+    width: 430px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.links{
+    display: flex;
+    justify-content: start;
+    margin-top: 10px;
+}
+
+.links p{
+    font-weight: bold;
+}
+
+.links a{
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 5px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"]{
+    padding: 10px 15px;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus{ 
+    border: 2px solid var(--text-color);
+}
+
+
+
+
+input[type="submit"]{
+    padding: 10px 0;
+    background-color: var(--bg-right-side);
+    border: none;
+    color: var(--bg-left-side);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* FIM LADO ESQUERDO */
+
+
+/* LADO DIREITO */
+
+.right-side{
+    background-color: var(--bg-right-side);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.emvolta2{
+    
+    width: 520px;
+}
+
+.emvolta2 img{
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.emvolta2 h1{
+    color: var(--bg-left-side);
+    text-align: start;
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+.emvolta2 p{
+    color: var(--bg-left-side);
+    line-height: 20px;
+}
+
+
+/* NOVA CONTA */
+
+form{
+    position: relative;
+}
+
+form .checkbox{
+    display: flex;
+    align-items: center;
+}
+
+form .checkbox label{
+    font-size: 14px;
+}
+
+input[type="checkbox"]{
+    margin-right: 12px;
+    width: 17px;
+    height: 17px;
+}
+
+/* FIM NOVA CONTA */
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1059px){
+    .emvolta{
+        width: 70%;
+    }
+
+    .emvolta2{
+        width: 80px;
+    }
+
+    .emvolta2 h1{
+        font-size: 27px;
+    }
+
+    .emvolta2 p{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 775px){
+    .container{
+        flex-direction: column;
+    }
+
+    .column{
+        width: 100%;
+    }
+
+    .left-side{
+        height: 100%;
+    }
+
+    .emvolta{
+        width: 70%;
+    }
+
+    .emvolta h1{
+        margin-top: 10px;
+    }
+
+    .emvolta2{
+        width: 65%;
+    }
+
+    .emvolta2 img{
+        margin-top: 25px;
+        width: 100%;
+    }
+
+    .emvolta2 h1{
+        text-align: start;
+    }
+
+    .emvolta2 p{
+        margin-bottom: 10px;
+    }
+
+    .links{
+        margin-bottom: 20px;
+    }
+}
