@@ -26,3 +26,34 @@ function pedir() {
             break;
     }
 }
+
+//Condicionais
+
+var valor = 30;
+
+if (valor === 30) {
+    console.log("Sim o valor é igual a 30")
+} else {
+    console.log("Numero diferente de 30")
+}
+
+var nome = "Adriel";
+var userOnline = false;
+
+if (userOnline === true) {
+    console.log("Usuario está online")
+} else {
+    console.log("Usuario está offline")
+}
+
+// Operador de comparação Ternario
+
+// O ponto de interrogação (?) é o mesmo de if
+// Os dois pontos (:) é o mesmo do else
+
+
+
+
+var numero = 10;
+
+numero === 10 ? console.log("Numero é igual a 10") : console.log("Numero diferente de 10");
