@@ -91,3 +91,8 @@ function deletarTarefa(posicao) {
 function salvarDados() {
     localStorage.setItem("@listaTarefas", JSON.stringify(tarefas))
 }
+
+//PROXIMOS PASSOS
+// * ADICIONAR O BOTAO DE EDITAR
+// * ESTILIZAR O BOTAO DE EXCLUIR
+// * ADICIONAR LISTA DE PRIORIDADES/IMPORTANCIA DA TAREFA
